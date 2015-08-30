@@ -1,4 +1,4 @@
-# deprecate
+# depr
 
 [![Build Status][travis-badge]][travis-url]
 
@@ -11,13 +11,13 @@ Easily deprecate a method.  Log a warning the first time it's used and optionall
 * @param {String} [message] - the message to log
 * @param {String} [preferredMethod] - an alternate method to execute
 */
-deprecate(scope, method, message, preferredMethod)
+depr(scope, method, message, preferredMethod)
 ```
 
 ## Examples
 
 ```js
-var deprecate = require('deprecate');
+var depr = require('depr');
 var app = {
   oldMethod: function () {},
   newMethod: function () {}
@@ -28,7 +28,7 @@ var app = {
 The deprecated method is executed, and a message is logged.
 
 ```js
-deprecate(app, 'oldMethod');
+depr(app, 'oldMethod');
 app.oldMethod();  // 'DEPRECATION WARNING: Do not use "oldMethod".'
 ```
 
@@ -36,7 +36,7 @@ app.oldMethod();  // 'DEPRECATION WARNING: Do not use "oldMethod".'
 The deprecated method is executed, and a custom message is logged.
 
 ```js
-deprecate(app, 'oldMethod', 'This method sucks.  Don\'t use it.');
+depr(app, 'oldMethod', 'This method sucks.  Don\'t use it.');
 app.oldMethod();  // 'This method sucks.  Don't use it.'
 ```
 
@@ -44,7 +44,7 @@ app.oldMethod();  // 'This method sucks.  Don't use it.'
 An alternate method is executed and a message is logged.
 
 ```js
-deprecate(app, 'oldMethod', null, 'newMethod');
+depr(app, 'oldMethod', null, 'newMethod');
 app.oldMethod();
 // 'DEPRECATION WARNING: Do not use "oldMethod". Use "newMethod" instead.'
 ```
@@ -53,11 +53,10 @@ app.oldMethod();
 An alternate method is executed and a custom message is logged.
 
 ```js
-deprecate(app, 'oldMethod', 'STOP USING oldMethod!!!!1!', 'newMethod');
-app.oldMethod();
-// 'STOP USING oldMethod!!!!1!'
+depr(app, 'oldMethod', 'STOP USING oldMethod!!!!1!', 'newMethod');
+app.oldMethod();  // 'STOP USING oldMethod!!!!1!'
 ```
 
 
-[travis-badge]: https://travis-ci.org/reergymerej/deprecate.svg
-[travis-url]: https://travis-ci.org/reergymerej/deprecate
+[travis-badge]: https://travis-ci.org/reergymerej/depr.svg
+[travis-url]: https://travis-ci.org/reergymerej/depr

@@ -1,5 +1,2 @@
 * es6 support
-* deprecate methods
-** redirect to another method
-** log only
 * deprecate fields

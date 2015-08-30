@@ -1,5 +1,5 @@
 {
-  "name": "deprecate",
+  "name": "depr",
   "description": "Easily deprecate a method.",
   "version": "1.0.0",
   "main": "app.js",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reergymerej/deprecate.git"
+    "url": "git+https://github.com/reergymerej/depr.git"
   },
   "keywords": [
     "deprecate",
@@ -32,7 +32,7 @@
   "author": "Jeremy Greer <jeremy.greer.atl@gmail.com> (http://jeremygreer.herokuapp.com/)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/reergymerej/deprecate/issues"
+    "url": "https://github.com/reergymerej/depr/issues"
   },
-  "homepage": "https://github.com/reergymerej/deprecate#readme"
+  "homepage": "https://github.com/reergymerej/depr#readme"
 }
