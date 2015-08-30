@@ -1,5 +1,6 @@
 'use strict';
 
+var fnInjector = require('fn-injector');
 var util = require('util');
 
 var getDefaultMessage = function (deprecatedMethod, preferredMethod) {
@@ -15,21 +16,19 @@ var getDefaultMessage = function (deprecatedMethod, preferredMethod) {
 
 var wrapMethod = function (scope, deprecatedMethod, message, alternate) {
 
-  scope[deprecatedMethod] = (function () {
-    var execute = scope[alternate] || scope[deprecatedMethod];
-    var logged = false;
+  var execute = scope[alternate] || scope[deprecatedMethod];
+  var logged = false;
 
-    return function () {
-      var args = Array.prototype.slice.apply(arguments);
-      message = message || getDefaultMessage(deprecatedMethod, alternate);
+  scope[deprecatedMethod] = fnInjector(scope[deprecatedMethod], function () {
+    var args = Array.prototype.slice.apply(arguments).splice(1);
+    message = message || getDefaultMessage(deprecatedMethod, alternate);
 
-      if (!logged && (logged = true)) {
-        console.log(message);
-      }
+    if (!logged && (logged = true)) {
+      console.log(message);
+    }
 
-      execute.apply(scope, args);
-    };
-  }());
+    execute.apply(scope, args);
+  });
 };
 
 module.exports = function (scope, member, message, alternate) {

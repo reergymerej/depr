@@ -4,10 +4,6 @@ var will = require('willy').will;
 var yps = require('yps');
 var app = require('../app.js');
 
-var monitor = function (method) {
-
-};
-
 describe('methods', function () {
   var obj;
   var called;

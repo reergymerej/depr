@@ -1,4 +1,4 @@
-# deprecated
+# deprecate
 
 ```js
 var app = {
