@@ -1,4 +1,7 @@
 {
+  "name": "deprecate",
+  "description": "Easily deprecate a method.",
+  "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "test": "mocha --reporter spec"
@@ -13,5 +16,23 @@
   },
   "dependencies": {
     "fn-injector": "^1.0.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reergymerej/deprecate.git"
+  },
+  "keywords": [
+    "deprecate",
+    "deprecation",
+    "deprecate method"
+  ],
+  "author": "Jeremy Greer <jeremy.greer.atl@gmail.com> (http://jeremygreer.herokuapp.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reergymerej/deprecate/issues"
+  },
+  "homepage": "https://github.com/reergymerej/deprecate#readme"
 }
