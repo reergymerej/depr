@@ -1,5 +1,7 @@
 # deprecate
 
+[![Build Status][travis-badge]][travis-url]
+
 ```js
 var app = {
   oldMethod: function () {},
@@ -30,3 +32,6 @@ app.oldMethod();  // logs 'DEPRECATION WARNING: Do not use "oldMethod". Use "new
 ```
 
 An alternate method is executed and a message is logged the first time.
+
+[travis-badge]: https://travis-ci.org/reergymerej/deprecate.svg
+[travis-url]: https://travis-ci.org/reergymerej/deprecate
