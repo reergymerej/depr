@@ -2,7 +2,7 @@
 
 [![Build Status][travis-badge]][travis-url]
 
-Easily deprecate a method.  Log a warning when it's used and optionally redirect to another method.
+Easily deprecate a method.  Log a warning the first time it's used and optionally redirect to another method.
 
 ```js
 /**
@@ -25,7 +25,7 @@ var app = {
 ```
 
 ### Basic
-The deprecated method is executed, but a message is logged the first time.
+The deprecated method is executed, and a message is logged.
 
 ```js
 deprecate(app, 'oldMethod');
@@ -33,20 +33,29 @@ app.oldMethod();  // 'DEPRECATION WARNING: Do not use "oldMethod".'
 ```
 
 ### Custom Message
-The deprecated method is executed, but a custom message is logged the first time.
+The deprecated method is executed, and a custom message is logged.
 
 ```js
 deprecate(app, 'oldMethod', 'This method sucks.  Don\'t use it.');
 app.oldMethod();  // 'This method sucks.  Don't use it.'
 ```
 
-### Redirect
-An alternate method is executed and a message is logged the first time.
+### Redirect - Default Message
+An alternate method is executed and a message is logged.
 
 ```js
 deprecate(app, 'oldMethod', null, 'newMethod');
 app.oldMethod();
 // 'DEPRECATION WARNING: Do not use "oldMethod". Use "newMethod" instead.'
+```
+
+### Redirect - Custom Message
+An alternate method is executed and a custom message is logged.
+
+```js
+deprecate(app, 'oldMethod', 'STOP USING oldMethod!!!!1!', 'newMethod');
+app.oldMethod();
+// 'STOP USING oldMethod!!!!1!'
 ```
 
 
