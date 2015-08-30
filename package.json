@@ -9,7 +9,7 @@
     "grunt-mocha-test": "^0.12.7",
     "mocha": "^2.2.5",
     "willy": "^1.0.1",
-    "yps": "^1.0.1"
+    "yps": "2.x"
   },
   "dependencies": {
     "fn-injector": "^1.0.1"
